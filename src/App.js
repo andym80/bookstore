@@ -1,33 +1,23 @@
-import './App.css';
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Calculator from './components/Calculator';
-import Home from './Pages/Home';
-import Quotes from './Pages/Quotes';
-import Navbar from './Pages/Navbar';
+import {
+  BrowserRouter as Router, Routes,
+  Route,
+} from 'react-router-dom';
+import Books from './components/BookForm';
+import Category from './components/Category';
+import Navbar from './components/Navbar';
+import Form from './components/Form';
 
-const App = () => (
-  <div className="App">
-    <header>
+function App() {
+  return (
+    <Router>
       <Navbar />
-    </header>
-    <main id="main-section">
       <Routes>
-        <Route
-          path="/"
-          element={<Home />}
-        />
-        <Route
-          path="/calculator"
-          element={<Calculator />}
-        />
-        <Route
-          path="/Quote"
-          element={<Quotes />}
-        />
+        <Route path="/" element={<Books />} />
+        <Route path="/Category" element={<Category />} />
+        <Route path="/Form" element={<Form />} />
       </Routes>
-    </main>
-  </div>
-);
+    </Router>
+  );
+}
 
 export default App;

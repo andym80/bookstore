@@ -11,7 +11,7 @@ function Book() {
           <li>Edit</li>
         </ul>
       </div>
-      <div className="porcentage">
+      <div className="percentage">
         <h4>60%</h4>
       </div>
       <div className="feature">
@@ -30,7 +30,7 @@ function Book() {
           <li>Edit</li>
         </ul>
       </div>
-      <div className="porcentage">
+      <div className="percentage">
         <h4>8%</h4>
       </div>
       <div className="feature">
@@ -49,7 +49,7 @@ function Book() {
           <li>Edit</li>
         </ul>
       </div>
-      <div className="porcentage">
+      <div className="percentage">
         <h4>0%</h4>
       </div>
       <div className="feature">

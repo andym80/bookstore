@@ -2,7 +2,8 @@
 
 #Bookstore
 
->Bookstore is a web application that allows users to create and share books by category & author and edition progress.
+>The bookstore is a web application that allows users to create and share books by category, author & edition progress.
+ A user can add a book to the store, remove a book from the store, and filter books by category and author, too.
 
 # Demo
 

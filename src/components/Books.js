@@ -1,14 +1,27 @@
+import { useSelector, useDispatch } from 'react-redux';
+import { booksReducer } from '../redux/Books/Books';
+
 const Book = () => {
-  (
-    <div className="container">
+  const books = useSelector((state) => state.booksReducer);
+  const dispatch = useDispatch();
+  return (books.map((book) => (
+    <div key={book.id} className="container">
       <div className="infocard">
         <span>Action</span>
-        <h1>The hunger games</h1>
-        <p>Suzanne Collins</p>
+        <h1>{book.title}</h1>
+        <p>{book.author}</p>
         <ul>
-          <li>Comments |</li>
-          <li>Remove |</li>
-          <li>Edit</li>
+          <button type="button">Comments |</button>
+          <button
+            type="button"
+            onClick={(e) => {
+              e.preventDefault();
+              dispatch(booksReducer.removeBook(book.id));
+            }}
+          >
+            Remove
+          </button>
+          <button type="button">Edit</button>
         </ul>
       </div>
       <div className="percentage">
@@ -19,46 +32,9 @@ const Book = () => {
         <h4>Chapter 17</h4>
         <button type="button" className="update">UPDATE PROGRESS</button>
       </div>
-
-      <div className="infocard">
-        <span>Science Fiction</span>
-        <h1>Dune</h1>
-        <p>Frank Herbert</p>
-        <ul>
-          <li>Comments |</li>
-          <li>Remove |</li>
-          <li>Edit</li>
-        </ul>
-      </div>
-      <div className="percentage">
-        <h4>8%</h4>
-      </div>
-      <div className="feature">
-        <h4>Current Charapter</h4>
-        <h4>Chapter 3: A lesson learned</h4>
-        <button type="button" className="update">UPDATE PROGRESS</button>
-      </div>
-
-      <div className="infocard">
-        <span>Economy</span>
-        <h1>Capital in the Twenty-first Century</h1>
-        <p>Suzanne Collins</p>
-        <ul>
-          <li>Comments |</li>
-          <li>Remove |</li>
-          <li>Edit</li>
-        </ul>
-      </div>
-      <div className="percentage">
-        <h4>0%</h4>
-      </div>
-      <div className="feature">
-        <h4>Current Charapter</h4>
-        <h4>Introduction</h4>
-        <button type="button" className="update">UPDATE PROGRESS</button>
-      </div>
     </div>
-  );
+
+  )));
 };
 
 export default Book;

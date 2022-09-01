@@ -9,7 +9,7 @@ const Navbar = () => {
         <Link to="/Category">Category</Link>
       </div>
       <div className="logo">
-        <span className="logotipe">Logo</span>
+        <span className="logotype">Logo</span>
       </div>
     </nav>
   </>;

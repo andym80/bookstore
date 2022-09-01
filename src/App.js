@@ -1,4 +1,3 @@
-import './App.css';
 import {
   BrowserRouter as Router, Routes,
   Route,
@@ -6,6 +5,7 @@ import {
 import Books from './components/BookForm';
 import Category from './components/Category';
 import Navbar from './components/Navbar';
+import Form from './components/Form';
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Books />} />
         <Route path="/Category" element={<Category />} />
+        <Route path="/Form" element={<Form />} />
       </Routes>
     </Router>
   );

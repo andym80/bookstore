@@ -45,12 +45,12 @@ export const addBook = (titleBook, authorBook, idBook) => {
   return Book;
 };
 
-export const removeBook = (id) => {
-  const Book = {
+export const removeBook = (bookId) => {
+  const removedBook = {
     type: REMOVE_BOOK,
-    id,
+    id: bookId,
   };
-  return Book;
+  return removedBook;
 };
 
 export default booksReducer;

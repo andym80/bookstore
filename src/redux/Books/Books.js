@@ -15,7 +15,7 @@ const initialState = [
   },
 ];
 
-const booksReduxer = (state = initialState, action) => {
+const booksReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
       return [
@@ -53,4 +53,4 @@ export const removeBook = (bookId) => {
   return removedBook;
 };
 
-export default booksReduxer;
+export default booksReducer;

@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { booksReduxer } from '../redux/Books/Books';
+import { booksReducer } from '../redux/Books/Books';
 
 const Book = () => {
-  const books = useSelector((state) => state.booksReduxer);
+  const books = useSelector((state) => state.booksReducer);
   const dispatch = useDispatch();
   return (books.map((book) => (
     <div key={book.id} className="container">
@@ -16,7 +16,7 @@ const Book = () => {
             type="button"
             onClick={(e) => {
               e.preventDefault();
-              dispatch(booksReduxer.removeBook(book.id));
+              dispatch(booksReducer.removeBook(book.id));
             }}
           >
             Remove

@@ -1,13 +1,13 @@
 import Book from './Books';
 import Form from './Form';
 
-function Books() {
-  return (
+const Books = () => {
+  <>
     <div>
       <Book />
       <Form />
     </div>
-  );
-}
+  </>;
+};
 
 export default Books;

@@ -1,5 +1,5 @@
-function Book() {
-  return (
+const Book = () => {
+  (
     <div className="container">
       <div className="infocard">
         <span>Action</span>
@@ -59,6 +59,6 @@ function Book() {
       </div>
     </div>
   );
-}
+};
 
 export default Book;

@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { removeBook } from '../redux/Books/Books';
 
 const Book = () => {
-  const books = useSelector((state) => state.booksReducer);
+  const books = useSelector((state) => state.books);
   const dispatch = useDispatch();
   return (books.map((book) => (
     <div key={book.id} className="container">

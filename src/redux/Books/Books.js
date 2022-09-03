@@ -22,7 +22,7 @@ export const booksLoadThunk = createAsyncThunk(LOAD_BOOKS, async () => {
   return setData;
 });
 
-export const bookAddThunk = createAsyncThunk(ADD_BOOK, async (
+export const addBookThunk = createAsyncThunk(ADD_BOOK, async (
   { title, author, category },
   thunkAPI,
 ) => {
@@ -53,7 +53,7 @@ const storeSlice = createSlice({
   initialState: [],
   extraReducers: {
     [booksLoadThunk.fulfilled]: (state, action) => action.payload,
-    [bookAddThunk.fulfilled]: (state, action) => action.payload,
+    [addBookThunk.fulfilled]: (state, action) => action.payload,
     [deleteBookThunk.fulfilled]: (state, action) => action.payload,
   },
 });

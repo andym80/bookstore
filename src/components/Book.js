@@ -1,5 +1,8 @@
+/* import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeBook } from '../redux/Books/Books';
+import Progressbar from 'react/Progressbar';
+import { booksLoadThunk, deleteBookThunk } from '../redux/Books/Books';
+import './style/Navbar.css';
 
 const Book = () => {
   const books = useSelector((state) => state.booksReducer);
@@ -25,6 +28,17 @@ const Book = () => {
         </ul>
       </div>
       <div className="percentage">
+        <Progressbar
+          input={70}
+          pathwidth={5}
+          pathcolor="#0290ff"
+          trailwidth={5}
+          trailcolor="#dfe6e9"
+          textsize={20}
+          textcolor="#0290ff"
+          textweight="bold"
+          text="70%"
+        />
         <h4>60%</h4>
       </div>
       <div className="feature">
@@ -38,3 +52,4 @@ const Book = () => {
 };
 
 export default Book;
+ */

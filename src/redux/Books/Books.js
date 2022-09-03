@@ -19,21 +19,20 @@ export const booksLoadThunk = createAsyncThunk(LOAD_BOOKS, async () => {
     id: key,
     ...call[key][0],
   }));
-
   return setData;
 });
 
-export const addBookThunk = createAsyncThunk(ADD_BOOK, async (
+export const bookAddThunk = createAsyncThunk(ADD_BOOK, async (
   { title, author, category },
   thunkAPI,
 ) => {
   const book = {
     item_id: uniqid(),
     title,
-    category,
     author,
+    category,
   };
-  await axios.post(`${URL}/${apiId}/books `, book)
+  await axios.post(`${URL}/${apiId}/books`, book)
     .then(() => thunkAPI.dispatch(booksLoadThunk()))
     .catch((err) => { console.log('Error', err); });
 
@@ -41,7 +40,7 @@ export const addBookThunk = createAsyncThunk(ADD_BOOK, async (
   return books;
 });
 
-const deleteBookThunk = createAsyncThunk(REMOVE_BOOK, async (id, thunkAPI) => {
+export const deleteBookThunk = createAsyncThunk(REMOVE_BOOK, async (id, thunkAPI) => {
   await axios.delete(`${URL}/${apiId}/books/${id}`)
     .then(() => thunkAPI.dispatch(booksLoadThunk()))
     .catch((err) => { console.log('Error', err); });
@@ -50,67 +49,14 @@ const deleteBookThunk = createAsyncThunk(REMOVE_BOOK, async (id, thunkAPI) => {
 });
 
 const storeSlice = createSlice({
-  name: 'bookstore/books',
+  name: 'bookstore-react-app/books',
   initialState: [],
-  reducers: {},
   extraReducers: {
     [booksLoadThunk.fulfilled]: (state, action) => action.payload,
-    [addBookThunk.fulfilled]: (state, action) => action.payload,
+    [bookAddThunk.fulfilled]: (state, action) => action.payload,
     [deleteBookThunk.fulfilled]: (state, action) => action.payload,
   },
 });
 
+export const booksList = (state) => state.bookList;
 export default storeSlice.reducer;
-export const booklist = (state) => state.booksList;
-
-const initialState = [
-  {
-    title: 'The Hunger Games',
-    author: 'Author1',
-    id: 1,
-  },
-
-  {
-    title: 'Dune',
-    author: 'Author2',
-    id: 2,
-  },
-];
-
-export const booksReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case ADD_BOOK:
-      return [
-        ...state,
-        {
-          id: 1,
-          title: action.title,
-          author: 'action.author',
-        },
-      ];
-
-    case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.id);
-
-    default:
-      return state;
-  }
-};
-
-export const addBook = (titleBook, authorBook, idBook) => {
-  const Book = {
-    type: ADD_BOOK,
-    title: titleBook,
-    author: authorBook,
-    id: idBook,
-  };
-  return Book;
-};
-
-export const removeBook = (bookId) => {
-  const removedBook = {
-    type: REMOVE_BOOK,
-    id: bookId,
-  };
-  return removedBook;
-};

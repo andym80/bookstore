@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import './styles/Navbar.css';
+import image from '../assets/user.png';
 
 const Navbar = () => {
   <>
@@ -9,7 +11,8 @@ const Navbar = () => {
         <Link to="/Category">Category</Link>
       </div>
       <div className="logo">
-        <span className="logotype">Logo</span>
+        <span className="logotype"><img src={image} alt="user" /></span>
+
       </div>
     </nav>
   </>;

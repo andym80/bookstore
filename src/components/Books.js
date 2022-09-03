@@ -1,5 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { removeBook } from '../redux/Books/Books';
+import Progressbar from 'react-js-progressbar';
+import { booksLoadThunk, deleteBookThunk } from '../redux/Books/Books';
+import './style/Books.css';
 
 const Book = () => {
   const books = useSelector((state) => state.booksReducer);

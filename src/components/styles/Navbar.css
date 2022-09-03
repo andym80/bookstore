@@ -33,7 +33,14 @@
   padding: 4px;
 }
 
+img {
+  width: 2em;
+  height: 2em;
+  padding-right: 0.5em;
+}
+
 .logotipe img {
-  height: 1.5rem;
-  width: 1.5rem;
+  width: fit-content;
+  height: 1em;
+  padding-right: 0.5em;
 }

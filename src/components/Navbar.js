@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import './styles/Navbar.css';
-import image from '../assets/user.png';
+import image from './assets/user.png';
 
-const Navbar = () => {
-  <>
+function Navbar() {
+  return (
     <nav className="navmenu">
       <h1>Bokstore CMS</h1>
       <div className="link">
@@ -11,11 +11,11 @@ const Navbar = () => {
         <Link to="/Category">Category</Link>
       </div>
       <div className="logo">
-        <span className="logotype"><img src={image} alt="user" /></span>
+        <span className="logotype"><img src={image} alt="User" /></span>
 
       </div>
     </nav>
-  </>;
-};
+  );
+}
 
 export default Navbar;

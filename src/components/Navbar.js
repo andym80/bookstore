@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './styles/Navbar.css';
+import './style/Navbar.css';
 import image from './assets/user.png';
 
 function Navbar() {

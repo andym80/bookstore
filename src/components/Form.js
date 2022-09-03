@@ -1,24 +1,70 @@
-import { useDispatch } from 'react-redux';
-import React, { useRef } from 'react';
-import uniqid from 'uniqid';
-import { addBook } from '../redux/Books/Books';
+import { useDispatch } from 'react-redux/es/exports';
+import React, { useState } from 'react';
+import { bookAddThunk } from '../redux/Books/Books';
+import './style/Form.css';
 
-const Form = () => {
+function Form() {
   const dispatch = useDispatch();
-  const title = useRef(null);
-  const author = useRef(null);
+  const [state, setState] = useState({
+    title: '',
+    author: '',
+    category: '',
+  });
 
-    <div className="formtitle">
-      <h2 className="newbook">Add new book</h2>
-    </div>;
+  const handle = (e) => {
+    setState({
+      ...state, [e.target.name]: e.target.value,
+    });
+  };
 
-    return (
-      <form className="form">
-        <input ref={title} type="text" className="inputbook" placeholder="Book" required />
-        <input ref={author} type="text" className="inputauthor" placeholder="Author" required />
-        <button type="button" className="submit" onClick={() => dispatch(addBook(title.current.value, author.current.value, uniqid()))}>Submit</button>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(bookAddThunk(state));
+    setState({
+      title: '',
+      author: '',
+      category: '',
+    });
+  };
+
+  const handleChanges = (e) => {
+    setState({
+      ...state, [e.target.name]: e.target.value,
+    });
+  };
+
+  return (
+    <section className="form-section">
+      <hr />
+      <h1>ADD NEW BOOK</h1>
+      <form className="form" onSubmit={handleSubmit}>
+        <input
+          name="title"
+          type="text"
+          onChange={handle}
+          value={state.title}
+          className="inputbook"
+          placeholder="Book"
+        />
+        <input
+          name="author"
+          type="text"
+          onChange={handle}
+          value={state.author}
+          className="inputauthor"
+          placeholder="Author"
+        />
+        <select className="category" value={state.category} name="category" onChange={handleChanges}>
+          <option value="History">History</option>
+          <option value="Romance">Romance</option>
+          <option value="Mystery">Mystery</option>
+          <option value="Science">Science</option>
+          <option value="Technology">Technology</option>
+        </select>
+        <button type="submit" className="submit">Submit</button>
       </form>
-    );
-};
+    </section>
+  );
+}
 
 export default Form;

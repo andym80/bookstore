@@ -23,7 +23,7 @@ export const booksLoadThunk = createAsyncThunk(LOAD_BOOKS, async () => {
   return setData;
 });
 
-export const addBookThunk = createAsyncThunk(ADD_BOOK, async (
+export const bookAddThunk = createAsyncThunk(ADD_BOOK, async (
   { title, author, category },
   thunkAPI,
 ) => {
@@ -41,7 +41,7 @@ export const addBookThunk = createAsyncThunk(ADD_BOOK, async (
   return books;
 });
 
-const deleteBookThunk = createAsyncThunk(REMOVE_BOOK, async (id, thunkAPI) => {
+export const deleteBookThunk = createAsyncThunk(REMOVE_BOOK, async (id, thunkAPI) => {
   await axios.delete(`${URL}/${apiId}/books/${id}`)
     .then(() => thunkAPI.dispatch(booksLoadThunk()))
     .catch((err) => { console.log('Error', err); });
@@ -55,7 +55,7 @@ const storeSlice = createSlice({
   reducers: {},
   extraReducers: {
     [booksLoadThunk.fulfilled]: (state, action) => action.payload,
-    [addBookThunk.fulfilled]: (state, action) => action.payload,
+    [bookAddThunk.fulfilled]: (state, action) => action.payload,
     [deleteBookThunk.fulfilled]: (state, action) => action.payload,
   },
 });

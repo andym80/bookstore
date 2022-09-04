@@ -1,10 +1,15 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Math Magicians
+#Bookstore
 
->Math Magicians is a web application that allows users to create and share math equations.
+>The bookstore is a web application that allows users to create and share books by category, author & edition progress.
+ A user can add a book to the store, remove a book from the store, and filter books by category and author, too.
 
-# Getting Started with Math Magicians app
+# Demo
+
+
+
+# Getting Started with Bookstore app
 
 Get a copy from this repository on GitHub at CODE (green icon) and paste into your code editor .
 

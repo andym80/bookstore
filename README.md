@@ -9,7 +9,7 @@
 
 
 
-# Getting Started with Math Magicians app
+# Getting Started with Bookstore app
 
 Get a copy from this repository on GitHub at CODE (green icon) and paste into your code editor .
 

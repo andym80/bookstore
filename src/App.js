@@ -1,7 +1,4 @@
-import {
-  BrowserRouter as Router, Routes,
-  Route,
-} from 'react-router-dom';
+import { Router, Routes, Route } from 'react-router-dom';
 import Books from './components/BookForm';
 import Category from './components/Category';
 import Navbar from './components/Navbar';

@@ -4,8 +4,9 @@ import Progressbar from 'react-js-progressbar';
 import { booksLoadThunk, deleteBookThunk } from '../redux/Books/Books';
 import './style/Books.css';
 
-function Book() {
-  const bookList = useSelector((state) => state.bookList);
+
+const Book = () => {
+  const books = useSelector((state) => state.books);
   const dispatch = useDispatch();
 
   useEffect(() => {

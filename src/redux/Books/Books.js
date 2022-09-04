@@ -80,14 +80,7 @@ const initialState = [
 export const booksReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
-      return [
-        ...state,
-        {
-          id: 1,
-          title: action.title,
-          author: 'action.author',
-        },
-      ];
+    { return [...state, action.payload]; }
 
     case REMOVE_BOOK:
       return state.filter((book) => book.id !== action.id);

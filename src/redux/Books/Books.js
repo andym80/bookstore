@@ -7,7 +7,7 @@ const ADD_BOOK = 'ADD_BOOK';
 const REMOVE_BOOK = 'REMOVE_BOOK';
 const LOAD_BOOKS = 'LOAD_BOOKS';
 
-const apiId = 'e5d11690-a112-4151-a540-bba474219f64';
+const apiId = '';
 const URL = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${apiId}/books`;
 
 export const booksLoadThunk = createAsyncThunk(LOAD_BOOKS, async () => {

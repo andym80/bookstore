@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from 'react-redux';
+/* import { useSelector, useDispatch } from 'react-redux';
 import { removeBook } from '../redux/Books/Books';
 
 const Book = () => {
@@ -38,3 +38,4 @@ const Book = () => {
 };
 
 export default Book;
+ */
